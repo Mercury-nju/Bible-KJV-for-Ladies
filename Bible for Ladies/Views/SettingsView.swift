@@ -11,8 +11,6 @@ struct SettingsView: View {
     
     @State private var showTimePicker = false
     @State private var tempDate = Date()
-    @State private var showPrivacyPolicy = false
-    @State private var showTermsOfService = false
     
     private var theme: ThemeColors {
         ThemeManager.theme(for: selectedTheme)
@@ -51,12 +49,6 @@ struct SettingsView: View {
             .navigationTitle("Settings")
             .sheet(isPresented: $showTimePicker) {
                 timePickerSheet
-            }
-            .sheet(isPresented: $showPrivacyPolicy) {
-                PrivacyPolicyView()
-            }
-            .sheet(isPresented: $showTermsOfService) {
-                TermsOfServiceView()
             }
         }
     }
@@ -318,7 +310,9 @@ struct SettingsView: View {
             
             VStack(spacing: 0) {
                 Button {
-                    showPrivacyPolicy = true
+                    if let url = URL(string: "https://mercury-nju.github.io/Bible-KJV-for-Ladies/privacy-policy.html") {
+                        UIApplication.shared.open(url)
+                    }
                 } label: {
                     legalRow("Privacy Policy")
                 }
@@ -326,7 +320,9 @@ struct SettingsView: View {
                 Divider().background(theme.text.opacity(0.1)).padding(.horizontal, 16)
                 
                 Button {
-                    showTermsOfService = true
+                    if let url = URL(string: "https://mercury-nju.github.io/Bible-KJV-for-Ladies/terms-of-service.html") {
+                        UIApplication.shared.open(url)
+                    }
                 } label: {
                     legalRow("Terms of Service")
                 }
