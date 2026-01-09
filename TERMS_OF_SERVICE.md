@@ -66,7 +66,7 @@ These Terms shall be governed by and construed in accordance with the laws of th
 ## Contact Information
 
 If you have any questions about these Terms of Service, please contact us at:
-- Email: [your-email@example.com]
+- Email: 66597405@qq.com
 
 ## Acknowledgment
 
